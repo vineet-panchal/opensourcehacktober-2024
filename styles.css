@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.home-nav-ctr {
+  background-image: url("./assets/bg-1.jpg");
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  position: fixed;
+  width: 100%;
+  /* opacity: 0.5; */
+}
+
+.nav-logo {
+  height: 60px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.nav-links li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-links a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: black;
+  padding: 6px 15px;
+  margin-left: 30px;
+  
+}
+
+.nav-lines-ctr {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-lines-ctr div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+}
+
+/* From Uiverse.io by WhiteNervosa */ 
+.nav-btn {
+  font-size: 0.7rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.nav-btn:focus,
+.nav-btn:hover {
+  color: black;
+}
+
+.nav-btn:focus:after,
+.nav-btn:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-btn:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.home-ctr {
+  display: flex;
+  height: 100vh;
+  /* background-color: brown; */
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  /* font-family: 'Helvetica Neue', sans-serif; */
+  margin-bottom: 0.75vw;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.home-subtitle {
+  font-size: 0.9rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:800px) {
+  body {
+      overflow-x: hidden;
+  }
+
+  /*
+  
+  NAVBAR
+  (MAX-WIDTH:770PX)
+  
+  */
+
+  .nav-links {
+      position: absolute;
+      z-index: 6;
+      right: 0px;
+      height: 90vh;
+      top: 10vh;
+      display: flex;
+      color: grey;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+      opacity: 0;
+      color: black;
+  }
+
+  .nav-links a {
+      color: black;
+  }
+
+  .nav-lines-ctr {
+      display: block;
+  }
+
+}
+
+
+.nav-active { /* Translating the nav-links */
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade { /* Nav-links animation, JS property */
+  from { /* Start */
+      opacity: 0;
+      transform: translateX(50px);
+  }
+
+  to { /* End */
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
